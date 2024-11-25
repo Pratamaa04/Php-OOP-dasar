@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
         }
     </style> -->
 </head>
+
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
     <!-- Navbar -->
@@ -27,7 +29,7 @@
         <?php include 'includes/sidebar.php'; ?>
 
         <!-- Main Content -->
-        <div class="flex-1 p-8">
+        <div class="flex-1 p-8" style="background-color: #eeeeee">
             <!-- Formulir Input Role -->
             <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
                 <h2 class="text-2xl font-bold mb-6 text-gray-800">Input Barang</h2>
@@ -38,10 +40,15 @@
                         <input type="text" id="barang_name" name="barang_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Nama Barang" required>
                     </div>
 
+                    <div class="mb-4">
+                        <label for="banyak_barang" class="block text-gray-700 text-sm font-bold mb-2">Jumlah Barang:</label>
+                        <input id="banyak_barang" name="banyak_barang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan jumlah barang" rows="3" required></input>
+                    </div>
+
                     <!-- Role Deskripsi -->
                     <div class="mb-4">
                         <label for="harga_barang" class="block text-gray-700 text-sm font-bold mb-2">Harga Barang:</label>
-                        <textarea id="harga_barang" name="harga_barang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Harga Barang" rows="3" required></textarea>
+                        <input id="harga_barang" name="harga_barang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Harga Barang" rows="3" required></input>
                         <!-- <input type="number" id="harga_barang" name="harga_barang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Harga Barang" required> -->
                     </div>
 
@@ -67,4 +74,5 @@
     </div>
 
 </body>
+
 </html>

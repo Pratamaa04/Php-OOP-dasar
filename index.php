@@ -62,6 +62,7 @@ switch ($model) {
         break;
     case 'user':
         $fitur = isset($_GET['fitur']) ? $_GET['fitur'] : null;
+        $idUser = isset($_GET['idUser']) ? $_GET['idUser'] : null;
         switch ($fitur) {
             case 'add':
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -74,6 +75,30 @@ switch ($model) {
                 } else {
                     $roles = $obj_Role->getAllRoles();
                     include 'views/user_input.php';
+                }
+                break;
+            case 'delete':
+                $userId = $obj_user->getUserById($idUser);
+                $obj_user->deleteUser($userId);
+                header('location: index.php?modul=user');
+                break;
+            case 'update':
+                $roles = $obj_Role->getAllRoles();
+                $users = $obj_user->getUserById($idUser);
+                include 'views/user_edit.php';
+                break;
+            case 'edit':
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+                    $role_name = $_POST['role_name'];
+                    $role = $obj_Role->getRoleByName($role_name);
+                    $obj_user->updateUser($idUser, $username, $password, $role);
+                    header('location: index.php?modul=user');
+                } else {
+                    $roles = $obj_Role->getAllRoles();
+                    $users = $obj_User->getUserById($idUser);
+                    include 'views/user_list.php';
                 }
                 break;
             default:
@@ -91,7 +116,8 @@ switch ($model) {
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $barangName = $_POST['barang_name'];
                     $hargaBarang = $_POST['harga_barang'];
-                    $obj_barang->addBarang($barangName, $hargaBarang);
+                    $banyakBarang = $_POST['banyak_barang'];
+                    $obj_barang->addBarang($barangName, $hargaBarang, $banyakBarang);
                     header('location: index.php?modul=barang');
                 } else {
                     include 'views/barang_input.php';
@@ -109,7 +135,8 @@ switch ($model) {
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $barangName = $_POST['barang_name'];
                     $hargaBarang = $_POST['harga_barang'];
-                    $obj_barang->updateBarang($id, $barangName, $hargaBarang);
+                    $banyakBarang = $_POST['banyak_barang'];
+                    $obj_barang->updateBarang($id, $barangName, $hargaBarang, $banyakBarang);
                     header('location: index.php?modul=barang');
                 } else {
                     include 'views/barang_list.php';

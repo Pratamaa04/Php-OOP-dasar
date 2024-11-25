@@ -19,15 +19,15 @@ class modelBarang
 
     public function initiliazeDefaultBarang()
     {
-        $this->addBarang("RTX 4060", 400000);
-        $this->addBarang("Intel I9 13k", 8000000);
-        $this->addBarang("Ryzen 9 9900x", 9000000);
+        $this->addBarang("RTX 4060", 400000, 40);
+        $this->addBarang("Intel I9 13k", 8000000, 50);
+        $this->addBarang("Ryzen 9 9900x", 9000000, 50);
     }
 
-    public function addBarang($barangName, $hargaBarang)
+    public function addBarang($barangName, $hargaBarang, $banyakBarang)
     {
         //        echo $this->nextId;
-        $this->objBarang = new Barang($this->nextId++, $barangName, $hargaBarang);
+        $this->objBarang = new Barang($this->nextId++, $barangName, $hargaBarang, $banyakBarang);
         $this->barangs[] = $this->objBarang;
         $this->saveToSession();
     }
@@ -61,12 +61,13 @@ class modelBarang
         return null;
     }
 
-    public function updateBarang($id, $barangName, $hargaBarang)
+    public function updateBarang($id, $barangName, $hargaBarang, $banyakBarang)
     {
         foreach ($this->barangs as $barang) {
             if ($barang->idBarang == $id) {
                 $barang->nameBarang = $barangName;
                 $barang->hargaBarang = $hargaBarang;
+                $barang->banyakBarang = $banyakBarang;
                 $this->saveToSession();
                 return true;
             }

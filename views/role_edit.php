@@ -19,7 +19,7 @@
         <?php include 'includes/sidebar.php'; ?>
 
         <!-- Main Content -->
-        <div class="flex-1 p-8">
+        <div class="flex-1 p-8" style="background-color: #2eeeee">
             <!-- Formulir Input Role -->
             <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
                 <h2 class="text-2xl font-bold mb-6 text-gray-800">Update Role</h2>

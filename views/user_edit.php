@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input User</title>
+    <title>Update User</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -20,23 +20,24 @@
 
         <!-- Main Content -->
         <div class="flex-1 p-8" style="background-color: #eeeeee">
-            <!-- Formulir Input Role -->
+            <!-- Formulir Edit Barang -->
             <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-bold mb-6 text-gray-800">Input User</h2>
-                <form action="index.php?modul=user&fitur=add" method="POST">
-                    <!-- Nama Role -->
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">Update User</h2>
+                <form action="index.php?modul=user&fitur=edit&idUser=<?php echo htmlspecialchars($users->user_id); ?>" method="POST">
+                    <!-- Nama Barang -->
                     <div class="mb-4">
                         <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
-                        <input type="text" id="username" name="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Username" required>
+                        <input type="text" id="username" name="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            value="<?php echo htmlspecialchars($users->username); ?>" required>
                     </div>
 
-                    <!-- Role Deskripsi -->
+                    <!-- Harga Barang -->
                     <div class="mb-4">
-                        <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
-                        <input id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Password" required></input>
+                        <label for="harga_barang" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
+                        <!-- <input type="number" id="harga_barang" name="harga_barang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="<?php echo htmlspecialchars($users->password); ?>" required> -->
+                        <input id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Harga Barang" rows="3" required><?php echo htmlspecialchars($users->password); ?></input>
                     </div>
 
-                    <!-- Role Status -->
                     <div class="mb-4">
                         <label for="role_name" class="block text-gray-700 text-sm font-bold mb-2">Role Name:</label>
                         <select id="role_name" name="role_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
@@ -52,7 +53,7 @@
                     <!-- Submit Button -->
                     <div class="flex items-center justify-between">
                         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                            Submit
+                            Update
                         </button>
                     </div>
                 </form>

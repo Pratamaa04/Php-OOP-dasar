@@ -1,4 +1,4 @@
-<div class="w-64 bg-gray-800 text-gray-100 h-screen">
+<div class="w-64 text-gray-100 h-screen" style="background-color: #00ADB5">
     <div class="p-4 font-bold text-lg">Menu</div>
     <ul class="mt-4 space-y-2">
         <li class="group">

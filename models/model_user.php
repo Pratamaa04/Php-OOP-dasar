@@ -74,6 +74,7 @@ class modelUser
             $userlokal->username = $username;
             $userlokal->password = $password;
             $userlokal->role = $role;
+            $this->saveToSession();
             return true;
         }
         return false;
@@ -87,6 +88,15 @@ class modelUser
 //     echo "username : " . $user->username . "<br>";
 //     echo "password : " . $user->password . "<br>";
 //     echo "role name : " . $user->role->role_name . "<br>";
+// }
+
+// $userlokal = $obj_user->getUserById(1);
+// Delete
+// $obj_user->deleteUser($userlokal);
+// foreach ($users as $user) {
+//     echo "Username: ".$user->username."<br/>";
+//     echo "Password: ".$user->password."<br/>";
+//     echo "Role Name: ".$user->role->role_name."<br/>";
 // }
 
 // echo "====================<br>";
