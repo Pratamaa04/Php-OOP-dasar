@@ -40,16 +40,23 @@
                         <input type="text" id="barang_name" name="barang_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Nama Barang" required>
                     </div>
 
-                    <div class="mb-4">
-                        <label for="banyak_barang" class="block text-gray-700 text-sm font-bold mb-2">Jumlah Barang:</label>
-                        <input id="banyak_barang" name="banyak_barang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan jumlah barang" rows="3" required></input>
-                    </div>
-
                     <!-- Role Deskripsi -->
                     <div class="mb-4">
                         <label for="harga_barang" class="block text-gray-700 text-sm font-bold mb-2">Harga Barang:</label>
                         <input id="harga_barang" name="harga_barang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Harga Barang" rows="3" required></input>
                         <!-- <input type="number" id="harga_barang" name="harga_barang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Harga Barang" required> -->
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="banyak_barang" class="block text-gray-700 text-sm font-bold mb-2">Jumlah Barang:</label>
+                        <input
+                            type="number"
+                            id="banyak_barang"
+                            name="banyak_barang"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            placeholder="Masukkan jumlah barang"
+                            required
+                            min="0">
                     </div>
 
                     <!-- Role Status -->

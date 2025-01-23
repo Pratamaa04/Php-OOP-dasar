@@ -31,18 +31,25 @@
                             value="<?php echo htmlspecialchars($barang->nameBarang); ?>" required>
                     </div>
 
-                    <div class="mb-4">
-                        <label for="banyak_barang" class="block text-gray-700 text-sm font-bold mb-2">Jumlah Barang:</label>
-                        <input type="text" id="banyak_barang" name="banyak_barang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            value="<?php echo htmlspecialchars($barang->banyakBarang); ?>" required>
-                    </div>
-
                     <!-- Harga Barang -->
                     <div class="mb-4">
                         <label for="harga_barang" class="block text-gray-700 text-sm font-bold mb-2">Harga Barang:</label>
                         <!-- <input type="number" id="harga_barang" name="harga_barang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="<?php echo htmlspecialchars($barang->hargaBarang); ?>" required> -->
                         <input id="harga_barang" name="harga_barang" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Harga Barang" rows="3" required value="<?php echo htmlspecialchars($barang->hargaBarang); ?>"></input>
                     </div>
+
+                    <div class="mb-4">
+                        <label for="banyak_barang" class="block text-gray-700 text-sm font-bold mb-2">Jumlah Barang:</label>
+                        <input
+                            type="number"
+                            id="banyak_barang"
+                            name="banyak_barang"
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            value="<?php echo htmlspecialchars($barang->banyakBarang); ?>"
+                            required
+                            min="0">
+                    </div>
+
 
                     <!-- Submit Button -->
                     <div class="flex items-center justify-between">

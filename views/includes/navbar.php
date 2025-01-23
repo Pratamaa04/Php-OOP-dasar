@@ -4,10 +4,10 @@
             COMPUTECH
         </div>
         <div class="text-white">
-            <span class="mr-4">Username</span>
-            <span class="mr-4">Role</span>
+            <span class="mr-4">Halo Username</span>
+            <!-- <span class="mr-4">Role</span> -->
             <button class="bg-blue-500 hover:bg-white-700 text-pink font-bold py-2 px-4 rounded">
-                Login
+                <a href="index.php?modul=login">Login</a>
             </button>
         </div>
     </div>

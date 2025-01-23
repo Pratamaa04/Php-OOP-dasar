@@ -4,11 +4,8 @@ class role
 {
     public $role_id;
     public $role_name;
-
     public $role_description;
-
     public $role_status;
-
     public function __construct($role_id, $role_name, $role_description, $role_status)
     {
         $this->role_id = $role_id;
